@@ -1,0 +1,22 @@
+.wrapper
+  .header
+    .header__logo
+      = link_to "NewsGlobe", root_path
+
+  .body
+    .main
+      .section
+        .section__title
+          %h1 /記事の編集/
+        .section__contents
+
+          .form
+            = form_for @post, local: true do |f|
+              .form__top
+                = f.text_field :title, placeholder: :タイトル, class: :form__top__title
+                = f.label :image, class: 'form__top__image' do
+                  = icon('fas', 'image', class: 'icon')
+                  = f.file_field :image, class: 'hidden'
+                -# = f.text_field :image, placeholder: :画像,　class: :form__top__image
+              = f.text_area :content, placeholder: :本文, class: :form__content
+              = f.submit "編集する", class: :send__btn

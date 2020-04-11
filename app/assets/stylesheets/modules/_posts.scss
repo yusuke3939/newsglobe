@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+
+.wrapper {
+  height: 100vh;
+  width: 100vw;
+}
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  &__logo {
+    font-size: 22px;
+    color: white;
+    text-align: center;
+    line-height: 70px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+  }
+  &__right {
+    height: 70px;
+    width: 350px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    &__create {
+      font-size: 16px;
+      color: white;
+      line-height: 70px;
+      margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    &__signup {
+      font-size: 16px;
+      color: white;
+      line-height: 70px;
+      margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
+    &__login {
+      font-size: 16px;
+      color: white;
+      line-height: 70px;
+      margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
+    }
+  }
+}
+
+.body {
+  height: 100%;
+  width: 100%;
+  background-color: #EFEFEF;
+  overflow: auto;
+  .main {
+    height: calc(100% - 70px);
+    width: calc(100% - 200px);
+    background-color: white;
+    margin: 0 50px;
+    margin: 0 auto;
+    padding-top: 70px;
+    .section {
+      height: 90vh;
+      width: 100%;
+      &__title {
+        text-align: center;
+        font-size: 20px;
+        color: #222;
+        font-weight: bold;
+        padding: 10px 0;
+        background-color: #EFEFEF;
+      }
+      &__contents {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        &__content {
+          display: flex;
+          width: 100%;
+          height: 100px;
+          padding-bottom: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #d8d8d8;
+          background-color: white;
+          &__image {
+            border: 1px solid black;
+            height: 80px;
+            width: 150px;
+          }
+          &__text {
+            height: 99px;
+            width: calc(100% - 90px);
+            background: white;
+            padding-left: 10px;
+            &__category {
+              font-size: 15px;
+              color: #222;
+              padding-bottom: 10px;
+            }
+            &__headline {
+              font-size: 20px;
+              font-weight: bold;
+              background-color: white;
+              a {
+                text-decoration: none;
+                color: #222;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+.form {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+  &__top {
+      margin: 20px 0;
+      height: 40px;
+      width: calc(100% - 100px);
+      background-color: white;
+      border: 1px solid gray;
+      border-radius: 3px;
+      display: flex;
+      position: relative;
+      margin: 0 auto;
+    &__title {
+      height: 38px;
+      width: 100%;
+      border: 0px solid;
+    }
+    &__image {
+      height: 25px;
+      width: 30x;
+      font-size: 25px;
+      background-color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      .hidden {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    margin: 20px 0;
+    height: 400px;
+    width: calc(100% - 100px);
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  .send__btn {
+    height: 40px;
+    width: calc(100% - 100px);
+    background-color: #222;
+    border-radius: 5px;
+    color: white;
+  }
+}
+
+
+.article {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  &__upper {
+    height: 80px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    &__title {
+      height: 80px;
+      width: calc(100% - 80px);
+      background-color: white;
+      font-size: 30px;
+      font-weight: bold;
+      line-height: 80px;
+      padding-left: 30px;
+      // text-align: center;
+      border-bottom: 1px solid rgb(172, 172, 172);
+    }
+    &__items {
+      line-height: 80px;
+      width: 100px;
+      border-bottom: 1px solid rgb(172, 172, 172);
+      display: flex;
+      &__edit {
+        width: 50px;
+        height: 79px;
+        a {
+          text-decoration: none;
+          color: #222;
+        }
+      }
+      &__delete {
+        width: 50px;
+        height: 79px;
+        a {
+          text-decoration: none;
+          color: #222;
+        }
+      }
+    }
+  }
+  &__image {
+
+  }
+  &__content {
+    margin: 30px;
+    font-size: 20px;
+    color: rgb(39, 39, 39);
+  }
+}
