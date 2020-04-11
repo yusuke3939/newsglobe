@@ -1,0 +1,22 @@
+.wrapper
+  .header
+    .header__logo
+      = link_to "NewsGlobe", root_path
+
+  .body
+    .main
+      .section
+        .section__title
+          %h1 /個別記事/
+        .section__contents
+
+          .article
+            .article__upper
+              .article__upper__title
+              = @post.title
+              .article__upper__edit
+                = link_to "編集", edit_post_path, class: "edit-btn"
+            .article__image
+              = @post.image
+            .article__content
+              = simple_format @post.content

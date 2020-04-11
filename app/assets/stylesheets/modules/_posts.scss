@@ -15,32 +15,54 @@
   position: fixed;
   top: 0;
   z-index: 100;
-  // display: flex;
   &__logo {
     font-size: 22px;
     color: white;
     text-align: center;
     line-height: 70px;
+    a {
+      text-decoration: none;
+      color: white;
+    }
   }
   &__right {
     height: 70px;
-    width: 300px;
+    width: 350px;
     position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
     display: flex;
+    &__create {
+      font-size: 16px;
+      color: white;
+      line-height: 70px;
+      margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+    }
     &__signup {
       font-size: 16px;
       color: white;
       line-height: 70px;
       margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
     }
     &__login {
       font-size: 16px;
       color: white;
       line-height: 70px;
       margin-left: 50px;
+      a {
+        text-decoration: none;
+        color: white;
+      }
+
     }
   }
 }
@@ -80,7 +102,7 @@
           border-bottom: 1px solid #d8d8d8;
           background-color: white;
           &__image {
-            border: 2px solid black;
+            border: 1px solid black;
             height: 80px;
             width: 150px;
           }
@@ -98,10 +120,74 @@
               font-size: 20px;
               font-weight: bold;
               background-color: white;
+              a {
+                text-decoration: none;
+                color: #222;
+              }
             }
           }
         }
       }
     }
   }
+}
+
+
+.form {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 20px;
+  &__top {
+      margin: 20px 0;
+      height: 40px;
+      width: calc(100% - 100px);
+      background-color: white;
+      border: 1px solid gray;
+      border-radius: 3px;
+      display: flex;
+      position: relative;
+      margin: 0 auto;
+    &__title {
+      height: 38px;
+      width: 100%;
+      border: 0px solid;
+    }
+    &__image {
+      height: 25px;
+      width: 30x;
+      font-size: 25px;
+      background-color: white;
+      cursor: pointer;
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      .hidden {
+        display: none;
+      }
+    }
+  }
+  &__content {
+    margin: 20px 0;
+    height: 400px;
+    width: calc(100% - 100px);
+    background-color: white;
+    border: 1px solid gray;
+    border-radius: 3px;
+  }
+  .send__btn {
+    height: 40px;
+    width: calc(100% - 100px);
+    background-color: #222;
+    border-radius: 5px;
+    color: white;
+  }
+}
+
+
+.article {
+  
 }

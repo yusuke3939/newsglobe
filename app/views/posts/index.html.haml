@@ -2,24 +2,26 @@
 .wrapper
   .header
     .header__logo
-      %h1 NewsGlobe
+      = link_to "NewsGlobe", root_path
     .header__right
+      .header__right__create
+        = link_to "新規投稿", new_post_path, class: "create-btn"
       .header__right__signup
-        %p 新規登録
+        = link_to "新規登録", new_user_registration_path, class: "signup-btn"
       .header__right__login
-        %p ログイン
+        = link_to "ログイン", new_user_session_path, class: "login-btn"
   .body
     .main
       .section
         .section__title
           %h1 /Latest News/
         .section__contents
-          .section__contents__content
-            .section__contents__content__image
-              ここに画像
-            .section__contents__content__text
-              .section__contents__content__text__category
-                ここに記事のカテゴリ
-              .section__contents__content__text__headline
-                ここに記事に見出し
-          
+          - @posts.each do |post|
+            .section__contents__content
+              .section__contents__content__image
+                = post.image
+              .section__contents__content__text
+                .section__contents__content__text__category
+                  = post.created_at
+                .section__contents__content__text__headline
+                  = link_to post.title, post_path(post.id), class: "article__headline"
