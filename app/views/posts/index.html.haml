@@ -2,11 +2,4 @@
   %h1 /Latest News/
 .section__contents
   - @posts.each do |post|
-    .section__contents__content
-      .section__contents__content__image
-        = post.image
-      .section__contents__content__text
-        .section__contents__content__text__category
-          = post.created_at
-        .section__contents__content__text__headline
-          = link_to post.title, post_path(post.id), class: "article__headline"
+    = render partial: "post", locals: { post: post }
