@@ -1,25 +1,17 @@
-.wrapper
-  .header
-    .header__logo
-      = link_to "NewsGlobe", root_path
+.section__title
+  %h1 /個別記事/
+.section__contents
 
-  .body
-    .main
-      .section
-        .section__title
-          %h1 /個別記事/
-        .section__contents
-
-          .article
-            .article__upper
-              .article__upper__title
-                = @post.title
-              .article__upper__items
-                .article__upper__items__edit
-                  = link_to "編集", edit_post_path(@post.id), class: "edit-btn"
-                .article__upper__items__delete
-                  = link_to "削除", post_path(@post.id), method: :delete, class: "delete-btn"
-            .article__image
-              = @post.image
-            .article__content
-              = simple_format @post.content
+  .article
+    .article__upper
+      .article__upper__title
+        = @post.title
+      .article__upper__items
+        .article__upper__items__edit
+          = link_to "編集", edit_post_path(@post.id), class: "edit-btn"
+        .article__upper__items__delete
+          = link_to "削除", post_path(@post.id), method: :delete, class: "delete-btn"
+    .article__image
+      = @post.image
+    .article__content
+      = simple_format @post.content
