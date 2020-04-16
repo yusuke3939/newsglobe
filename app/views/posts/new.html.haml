@@ -9,8 +9,8 @@
         = f.label :image, class: 'form__top__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-        -# = f.text_field :image, placeholder: :画像, class: :form__top__image
+      = f.label :tag_list
+      = f.text_field :tag_list, value: @post.tag_list.join(','),placeholder: :国、地域, class: :form__tag
       = f.text_area :content, placeholder: :本文, class: :form__content
       = f.submit "投稿する", class: :send__btn
-    
       

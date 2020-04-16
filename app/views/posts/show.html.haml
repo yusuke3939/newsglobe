@@ -14,7 +14,25 @@
       .article__upper__writer
         By 
         = @post.user.name
-    .article__image
-      = @post.image
-    .article__content
-      = simple_format @post.content
+    .article__lower
+      .article__lower__image
+        - if @post.image?
+          = image_tag @post.image.url
+        - else
+          = image_tag "noimage.gif"
+      .article__lower__content
+        = simple_format @post.content
+    -# .comment
+    -#   .form
+    -#     - if current_user
+    -#       = form_for @comment, local: true do |f|
+    -#         = f.text_area :text, placeholder: "コメントする", rows: "2"
+    -#         = f.submit "送信"
+    -#     - else
+    -#       %p ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+    -#   .comments
+    -#     %h4 コメント一覧
+    -#     - if @comments
+    -#       - @comments.each do |comment|
+    -#         %p
+    -#           = comment.text
