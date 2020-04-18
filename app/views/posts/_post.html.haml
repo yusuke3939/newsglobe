@@ -1,12 +1,12 @@
 .section__contents__content
+  .section__contents__content__category
+    .section__contents__content__category__region
+      - post.region_list.each do |region|
+        = link_to region, posts_path(tag_name: region), class: "article__region"
   .section__contents__content__image
     - if post.image?
-      = image_tag post.image.thumb.url
+      = link_to image_tag(post.image.thumb.url), post_path(post.id)
     - else
       = image_tag "noimage.gif"
-  .section__contents__content__text
-    .section__contents__content__text__category
-      - post.tag_list.each do |tag|
-        = link_to tag, posts_path(tag_name: tag), class: "article__country"
-    .section__contents__content__text__headline
-      = link_to post.title, post_path(post.id), class: "article__headline"
+  .section__contents__content__headline
+    = link_to post.title, post_path(post.id), class: "article__headline"
