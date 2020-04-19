@@ -40,13 +40,3 @@
 ### Association
 - belongs_to :post
 - belongs_to :tag
-
-## commentsテーブル
-|Column|Type|Options|
-|------|----|-------|
-|text|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|post_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :post
-- belongs_to :user
