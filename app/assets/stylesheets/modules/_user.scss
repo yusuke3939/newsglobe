@@ -1,9 +1,9 @@
 .account-page {
   .account-page__inner {
     width: 500px;
-    height: 400px;
+    height: 450px;
     margin: 60px auto;
-    padding: 60px;
+    padding: 10px 60px;
     background-color: #fff;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -21,6 +21,9 @@
     }
   }
   
+  .choice {
+    margin-top: 10px;
+  }
 
   .account-page__header {
     
@@ -76,7 +79,8 @@
   input[type='submit'] {
     float: left;
     padding: 2px;
-    margin-right: 40px;
+    margin: 10px 40px 10px 0;
+    padding: 5px 50px;
     color: #fff;
     background-color: #38aef0;
   }
@@ -87,6 +91,10 @@
       color: #d65f4c;
       font-weight: 400;
     }
+  }
+
+  .actions {
+      width: 100px;
   }
 }
 
@@ -114,3 +122,5 @@
     font-size: 13px;
   }
 }
+
+
