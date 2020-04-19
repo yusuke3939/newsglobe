@@ -9,6 +9,14 @@
         = f.label :image, class: 'form__top__image' do
           = icon('fas', 'image', class: 'icon')
           = f.file_field :image, class: 'hidden'
-        -# = f.text_field :image, placeholder: :画像,　class: :form__top__image
-      = f.text_area :content, placeholder: :本文, class: :form__content
-      = f.submit "編集する", class: :send__btn
+      .form__field
+        = f.label :region_list, "国、地域"
+        = f.text_field :region_list, value: @post.region_list.join(','),placeholder: :国、地域, class: :form__tag
+      -# .form__field
+      -#   = f.label :genre_list, "ジャンル"
+      -#   = f.text_field :genre_list, value: @post.genre_list.join(','),placeholder: :ジャンル, class: :form__tag
+      -# = f.label :tag_list
+      -# = f.text_field :tag_list, value: @post.tag_list.join(','),placeholder: :国、地域, class: :form__tag
+      .form__field
+        = f.text_area :content, placeholder: :本文, class: :form__content
+        = f.submit "編集する", class: :send__btn

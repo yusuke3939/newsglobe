@@ -2,6 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %script{src: "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"}
     %title Newsglobe
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -9,12 +10,28 @@
   %body
     .wrapper
       .header
+        .header__navi
+          %ul.dropdwn
+            %li
+              = icon('fas', 'globe-americas')
+              %ul.dropdwn_menu
+                %li
+                  地域
+                %li
+                  ジャンル
         .header__logo
           = link_to "NewsGlobe", root_path
         .header__right
           - if user_signed_in?
             = link_to "新規投稿", new_post_path, class: "header__right-btn"
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right-btn"
+            %ul.dropdwn
+              %li 
+                =current_user.name
+                %ul.dropdwn_menu
+                  %li
+                    = link_to "編集", edit_user_registration_path, class: "header__right-btn"
+                  %li
+                    = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__right-btn"
           - else
             = link_to "新規登録", new_user_registration_path, class: "header__right-btn"
             = link_to "ログイン", new_user_session_path, class: "header__right-btn"
